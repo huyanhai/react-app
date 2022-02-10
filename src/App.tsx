@@ -7,6 +7,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
+        <Route path="/" element={<div>hellow</div>}></Route>
         <Route element={<Layout />}>
           {routes.map((item, index) => {
             const { commponents, ...other } = item;

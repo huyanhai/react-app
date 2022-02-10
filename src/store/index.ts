@@ -1,3 +1,12 @@
-import { createStore, combineReducers } from "redux";
-import { count } from "./reducers";
-export const store = createStore(combineReducers({ count }));
+import { configureStore } from "@reduxjs/toolkit";
+import counterReducer from "./counterSlice";
+import todoReducer from "./todoSlice";
+
+export const store = configureStore({
+  reducer: {
+    counter: counterReducer,
+    todo: todoReducer,
+  },
+});
+
+export type RootState = ReturnType<typeof store.getState>;
